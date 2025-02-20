@@ -113,8 +113,8 @@ public class _003_i_will_be_run_third : IMigration { }
 <p>it's also possible to have more control by supplying a collection of migration class instances, which comes in handy if your migrations require other dependencies.</p>
 <pre><code class="lang-csharp">await DB.MigrationsAsync(new IMigration[]
 {
-    new _001_seed_data(someDependancy),
-    new _002_transform_data(someDependancy)
+    new _001_seed_data(someDependency),
+    new _002_transform_data(someDependency)
 });
 </code></pre>
 <h3 id="examples">Examples</h3>

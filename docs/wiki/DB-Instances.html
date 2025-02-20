@@ -102,7 +102,7 @@ feel free to create as many instances as you please whenever needed.</p>
 <li><a href="DB-Instances-Audit-Fields.html">Automatic audit fields</a></li>
 <li><a href="DB-Instances-Event-Hooks.html">Custom event hooks</a></li>
 <li><a href="DB-Instances-Global-Filters.html">Global filters</a></li>
-<li><a href="DB-Instances.html#dependancy-injection">Dependancy injection</a> (debatable)</li>
+<li><a href="DB-Instances.html#dependency-injection">Dependency injection</a> (debatable)</li>
 </ul>
 <h2 id="create-an-instance">Create an instance</h2>
 <pre><code class="lang-csharp">var db = new DBContext(&quot;database-name&quot;, &quot;127.0.0.1&quot;);
@@ -124,7 +124,7 @@ await db.Update&lt;Book&gt;()
         .Modify(b =&gt; b.Title, &quot;updated&quot;)
         .ExecuteAsync();
 </code></pre>
-<h2 id="dependancy-injection">Dependancy injection</h2>
+<h2 id="dependency-injection">Dependency injection</h2>
 <p>it may be tempting to register <code>DBContext</code> instances with IOC containers. instead you should be injecting the repositories (that wrap up data access methods) into your controllers/services, not the DBContext instances directly. <a href="https://github.com/dj-nitehawk/MongoDB-Entities-Repository-Pattern">click here</a> for a repository pattern example.</p>
 <p>if you don't plan on unit testing or swapping persistance technology at a future date, there's really no need to use dependency injection and/or DBcontext instances <em>(unless you need the features mentioned above)</em>. in which case feel free to do everything via the DB static methods for the sake of convenience.</p>
 <p>it is however recommended you encapsulate all data access logic in repository/service/manager classes in order to isolate persistance logic from your application logic.</p>

@@ -8,7 +8,7 @@ feel free to create as many instances as you please whenever needed.
 - [Automatic audit fields](DB-Instances-Audit-Fields.md)
 - [Custom event hooks](DB-Instances-Event-Hooks.md)
 - [Global filters](DB-Instances-Global-Filters.md)
-- [Dependancy injection](DB-Instances.md#dependancy-injection) (debatable)
+- [Dependency injection](DB-Instances.md#dependency-injection) (debatable)
 
 ## Create an instance
 
@@ -37,7 +37,7 @@ await db.Update<Book>()
         .ExecuteAsync();
 ```
 
-## Dependancy injection
+## Dependency injection
 
 it may be tempting to register `DBContext` instances with IOC containers. instead you should be injecting the repositories (that wrap up data access methods) into your controllers/services, not the DBContext instances directly. [click here](https://github.com/dj-nitehawk/MongoDB-Entities-Repository-Pattern) for a repository pattern example.
 

@@ -27,8 +27,8 @@ it's also possible to have more control by supplying a collection of migration c
 ```csharp
 await DB.MigrationsAsync(new IMigration[]
 {
-    new _001_seed_data(someDependancy),
-    new _002_transform_data(someDependancy)
+    new _001_seed_data(someDependency),
+    new _002_transform_data(someDependency)
 });
 ```
 
